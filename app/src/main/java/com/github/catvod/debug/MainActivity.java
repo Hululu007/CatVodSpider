@@ -7,7 +7,7 @@ import android.widget.Button;
 import com.github.catvod.R;
 import com.github.catvod.crawler.Spider;
 import com.github.catvod.spider.Init;
-import com.github.catvod.spider.PTT;
+import com.github.catvod.spider.LiveLms;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
     private void initSpider() {
         try {
             Init.init(getApplicationContext());
-            spider = new PTT();
+            spider = new LiveLms();
             spider.init(this, "");
         } catch (Throwable e) {
             e.printStackTrace();
@@ -72,9 +72,10 @@ public class MainActivity extends Activity {
     public void categoryContent() {
         try {
             HashMap<String, String> extend = new HashMap<>();
-            extend.put("c", "19");
-            extend.put("year", "2024");
-            Logger.t("categoryContent").d(spider.categoryContent("3", "2", true, extend));
+//            extend.put("c", "19");
+//            extend.put("year", "2024");
+            extend.put("class", "1");
+            Logger.t("categoryContent").d(spider.categoryContent("huya/1", "1", true, extend));
         } catch (Throwable e) {
             e.printStackTrace();
         }
@@ -82,7 +83,7 @@ public class MainActivity extends Activity {
 
     public void detailContent() {
         try {
-            Logger.t("detailContent").d(spider.detailContent(Arrays.asList("434686")));
+            Logger.t("detailContent").d(spider.detailContent(Arrays.asList("huya/572329")));
         } catch (Throwable e) {
             e.printStackTrace();
         }
@@ -98,7 +99,7 @@ public class MainActivity extends Activity {
 
     public void searchContent() {
         try {
-            Logger.t("searchContent").d(spider.searchContent("我的人间烟火", false));
+            Logger.t("searchContent").d(spider.searchContent("dnf", false));
         } catch (Throwable e) {
             e.printStackTrace();
         }

@@ -63,13 +63,23 @@ public class Vod {
         setVodRemarks(vodRemarks);
     }
 
-    public Vod(String vodId, String vodName, String vodPic, String vodRemarks, String action) {
+//    public Vod(String vodId, String vodName, String vodPic, String vodRemarks,String action) {
+//        setVodId(vodId);
+//        setVodName(vodName);
+//        setVodPic(vodPic);
+//        setVodRemarks(vodRemarks);
+//        setAction(action);
+//    }
+
+    //TODO
+    public Vod(String vodId, String vodName, String vodPic, String vodRemarks,String vodYear) {
         setVodId(vodId);
         setVodName(vodName);
         setVodPic(vodPic);
         setVodRemarks(vodRemarks);
-        setAction(action);
+        setVodYear(vodYear);
     }
+
 
     public Vod(String vodId, String vodName, String vodPic, String vodRemarks, Style style) {
         setVodId(vodId);

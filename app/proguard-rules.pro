@@ -24,6 +24,9 @@
 
 # QuickJS
 -keep class com.whl.quickjs.** { *; }
+-keepclasseswithmembers class * {
+    native <methods>;
+}
 
 # Sardine
 -keep class com.thegrizzlylabs.sardineandroid.** { *; }
